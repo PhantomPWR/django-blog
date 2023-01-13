@@ -10,11 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
-import dj_database_url
+from pathlib import Path
 from django.contrib.messages import constants as messages
-if os.path.isfile('env.py'):
+import dj_database_url
+if os.path.isfile("env.py"):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,9 +31,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+ALLOWED_HOSTS = ["mb2test.herokuapp.com", "localhost"]
 
-ALLOWED_HOSTS = ['codestar-django-walkthrough.herokuapp.com', 'localhost']
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
 # Application definition
@@ -45,14 +45,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'django_summernote',
     'crispy_forms',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'django_summernote',
     'blog',
 ]
 
